@@ -1,0 +1,46 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - DEV=false
+
+    ports:
+      ["8000:8000"]
+    volumes:
+      - ./:/app
+    command: sh -c "celery -A main worker --loglevel=info && python3 ./telegram_bot.py"
+    restart: on-failure
+    #    environment:
+#      - DB_HOST=db
+#      - DB_NAME=devdb
+#      - DB_USER=devuser
+#      - DB_PASS=changeme
+    depends_on:
+      - redis
+
+#  db:
+#    image: postgres:13-alpine
+#    volumes:
+#      - dev-db-data:/c/Program\ Files/PostgreSQL/16/data
+
+#    environment:
+#      - POSTGRES_DB=devdb
+#      - POSTGRES_USER=devuser
+#      - POSTGRES_PASSWORD=changeme
+
+  redis:
+    image: "redis:alpine"
+    restart: always
+    command: redis-server --save 20 1
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis:/data
+
+volumes:
+  redis:
+    driver: local

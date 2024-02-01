@@ -1,0 +1,14 @@
+SHOW_PRICES = "مشاهده تعرفه ها"
+BUY_SERVICE = "خرید سرویس"
+GET_TEST_ACCOUNT = "دریافت اکانت تست"
+GET_DISCOUNT = "تخفیف بگیرید"
+MAIN_PAGE = 'صفحه اصلی'
+ONE_MONTH_ACCOUNT = 'اکانت یک ماهه'
+TWO_MONTH_ACCOUNT = 'اکانت دو ماهه'
+ONE_USER_ACCOUNT = 'اکانت یک کاربره'
+TWO_USER_ACCOUNT = 'اکانت دو کاربره'
+I_HAVE_DISCOUNT = 'کد تخفیف دارم'
+BUY_EXTRA_GB = 'خرید حجم اضافه'
+SHOW_ACCOUNT_REMAIN = 'مشاهده مدت زمان و حجم باقیمانده سرویس'
+SHOW_EXTRA_GB = 'مشاهده حجم اضافه باقیمانده'
+EXTEND_SERVICE = 'تمدید سرویس'
